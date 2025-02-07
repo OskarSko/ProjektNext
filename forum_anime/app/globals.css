@@ -3,70 +3,134 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background-color: #121212;
+  --foreground: #ffffff;
+  --highlight-color: #8a2be2; /* Fioletowy akcent */
 }
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  background-color: #f4f4f9;
+  color: var(--foreground);
+  background: var(--background-color);
 }
 
+/* Tło obrazka */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/background-image.png') no-repeat center center;
+  background-size: cover;
+  filter: brightness(0.5);
+  z-index: -1;
+}
+
+/* Główna nawigacja */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #1f2937;
-  color: white;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid var(--highlight-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .nav ul {
   display: flex;
   list-style: none;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .nav a {
-  color: white;
+  color: var(--foreground);
   text-decoration: none;
+  font-size: 1.2rem;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  text-decoration: underline;
+  color: var(--highlight-color);
 }
 
+/* Kontener strony */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--highlight-color);
+}
+
+/* Wyszukiwarka */
 input[type="text"] {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.anime-card {
-  border: 1px solid #ddd;
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid var(--highlight-color);
+  background-color: #222;
+  color: var(--foreground);
   border-radius: 5px;
-  padding: 1rem;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
-.featured-anime h2 {
+input[type="text"]::placeholder {
+  color: #888;
+}
+
+/* Lista anime */
+.anime-list {
+  list-style: none;
+  padding: 0;
+}
+
+.anime-list li {
+  padding: 1.5rem;
+  border: 1px solid #333;
+  background-color: #1b1f24;
+  border-radius: 8px;
   margin-bottom: 1rem;
+  color: var(--foreground);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+.anime-list li:hover {
+  background-color: #2a2f36;
+  transform: translateY(-3px);
+}
+
+.anime-list li h3 {
+  font-size: 1.5rem;
+  color: var(--highlight-color);
+  margin: 0;
+}
+
+.anime-list li p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Responsywność dla mniejszych ekranów */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container {
+    padding: 15px;
+    max-width: 95%;
+  }
 }
