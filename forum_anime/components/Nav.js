@@ -5,8 +5,8 @@ export default function Nav() {
     <nav className="nav">
       <ul>
         <li><Link href="/anime">Anime</Link></li>
-        <li><Link href="/contact">Kontakt</Link></li>
-        <li><Link href="/posts">Posty</Link></li>
+        <li><Link href="/kontakt">Kontakt</Link></li>
+        <li><Link href="/forum">forum</Link></li>
       </ul>
     </nav>
   );
