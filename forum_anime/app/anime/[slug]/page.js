@@ -1,4 +1,12 @@
-import { getAnimeBySlug } from '@/lib/anime';
+import { getAnimeBySlug, getAllAnime } from '@/lib/anime';
+
+export async function generateStaticParams() {
+  const animeList = getAllAnime();
+
+  return animeList.map((anime) => ({
+    slug: anime.slug,
+  }));
+}
 
 export default async function AnimeDetailsPage({ params }) {
   const anime = await getAnimeBySlug(params.slug);
