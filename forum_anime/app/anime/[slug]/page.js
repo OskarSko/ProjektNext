@@ -1,7 +1,7 @@
-import { getAnimeById } from '@/lib/anime';
+import { getAnimeBySlug } from '@/lib/anime';
 
-export default function AnimeDetailsPage({ params }) {
-  const anime = getAnimeById(params.id);
+export default async function AnimeDetailsPage({ params }) {
+  const anime = await getAnimeBySlug(params.slug);
 
   if (!anime) {
     return <h1>Anime not found</h1>;

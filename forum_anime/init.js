@@ -20,8 +20,8 @@ const dummyPosts = [
 
 const dummyAnime = [
   {
-    id: 1,
     title: 'Naruto',
+    slug: 'naruto',
     description: 'A young ninja striving to be the leader of his village.',
     genres: 'Shounen, Action, Adventure',
     release_year: 2002,
@@ -29,8 +29,8 @@ const dummyAnime = [
     image: '/images/naruto.jpg'
   },
   {
-    id: 2,
     title: 'Attack on Titan',
+    slug: 'attack-on-titan',
     description: 'A world where humanity battles massive Titans.',
     genres: 'Action, Mystery, Drama',
     release_year: 2013,
@@ -38,8 +38,8 @@ const dummyAnime = [
     image: '/images/aot.jpg'
   },
   {
-    id: 3,
     title: 'Your Lie in April',
+    slug: 'your-lie-in-april',
     description: 'A heartwarming and tragic romance about music and life.',
     genres: 'Romance, Drama, Music',
     release_year: 2014,
@@ -47,6 +47,7 @@ const dummyAnime = [
     image: '/images/your-lie-in-april.jpg'
   }
 ];
+
 
 db.prepare(`
   CREATE TABLE IF NOT EXISTS posts (
@@ -64,6 +65,7 @@ db.prepare(`
   CREATE TABLE IF NOT EXISTS anime (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT NOT NULL,
+    slug TEXT NOT NULL UNIQUE,
     description TEXT NOT NULL,
     genres TEXT NOT NULL,
     release_year INTEGER NOT NULL,
@@ -80,8 +82,8 @@ function initData() {
   `);
 
   const animeStmt = db.prepare(`
-    INSERT INTO anime (title, description, genres, release_year, episodes, image)
-    VALUES (@title, @description, @genres, @release_year, @episodes, @image)
+    INSERT INTO anime (title, slug, description, genres, release_year, episodes, image)
+    VALUES (@title, @slug, @description, @genres, @release_year, @episodes, @image)
   `);
 
   for (const post of dummyPosts) {
