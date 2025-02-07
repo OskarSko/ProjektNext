@@ -39,16 +39,21 @@ body::before {
   padding: 1rem 2rem;
   background-color: rgba(0, 0, 0, 0.85);
   border-bottom: 2px solid var(--highlight-color);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
 }
 
+/* Lista nawigacyjna */
 .nav ul {
   display: flex;
   list-style: none;
   gap: 1rem;
-  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 }
 
 .nav a {
@@ -66,8 +71,9 @@ body::before {
 /* Kontener strony */
 .container {
   max-width: 800px;
-  margin: 40px auto;
+  width: 100%; /* Dodanie pełnej szerokości w ramach maksymalnej szerokości */
   padding: 20px;
+  margin: 150px auto 40px auto; /* Wyśrodkowanie kontenera */
   background: rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
@@ -131,6 +137,7 @@ input[type="text"]::placeholder {
 
   .container {
     padding: 15px;
+    margin-top: 130px;
     max-width: 95%;
   }
 }
