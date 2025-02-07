@@ -6,6 +6,10 @@ export function getAllAnime() {
   return db.prepare('SELECT * FROM anime ORDER BY release_year DESC').all();
 }
 
+export function getAnimeBySlug(slug) {
+  return db.prepare('SELECT * FROM anime WHERE slug = ?').get(slug);
+}
+
 export function getAnimeById(id) {
   return db.prepare('SELECT * FROM anime WHERE id = ?').get(id);
 }

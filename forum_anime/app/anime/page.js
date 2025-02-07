@@ -15,7 +15,7 @@ export default function AnimePage() {
             <h2>{anime.title}</h2>
             <p><strong>Genres:</strong> {anime.genres}</p>
             <p><strong>Episodes:</strong> {anime.episodes}</p>
-            <Link href={`/anime/${anime.id}`}>See details</Link>
+            <Link href={`/anime/${anime.slug}`}>See details</Link>
           </div>
         ))}
       </div>
