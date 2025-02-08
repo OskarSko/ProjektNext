@@ -1,5 +1,9 @@
+import Header from '@/components/Header';
+
 export default function Forum() {
     return(
-        <div>To jest forum</div>
+        <div><Header />
+        <h1>To jest forum</h1>
+        </div>
     );
 }
