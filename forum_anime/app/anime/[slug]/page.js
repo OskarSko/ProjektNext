@@ -1,4 +1,5 @@
 import { getAnimeBySlug, getAllAnime } from '@/lib/anime';
+import './style.css';
 import Header from '@/components/Header';
 
 export async function generateStaticParams() {
@@ -17,14 +18,16 @@ export default async function AnimeDetailsPage({ params }) {
   }
 
   return (
-    <div>
+    <div className="card">
       <Header />
-      <h1>{anime.title}</h1>
       <img src={anime.image} alt={anime.title} />
-      <p><strong>Description:</strong> {anime.description}</p>
-      <p><strong>Genres:</strong> {anime.genres}</p>
-      <p><strong>Release Year:</strong> {anime.release_year}</p>
-      <p><strong>Episodes:</strong> {anime.episodes}</p>
+      <div className="card-content">
+        <h1>{anime.title}</h1>
+        <p><strong>Description:</strong> {anime.description}</p>
+        <p><strong>Genres:</strong> {anime.genres}</p>
+        <p><strong>Release Year:</strong> {anime.release_year}</p>
+        <p><strong>Episodes:</strong> {anime.episodes}</p>
+      </div>
     </div>
   );
 }
