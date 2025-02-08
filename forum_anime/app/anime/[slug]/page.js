@@ -1,8 +1,9 @@
 import { getAnimeBySlug, getAllAnime } from '@/lib/anime';
 import './style.css';
+import Header from '@/components/Header';
 
 export async function generateStaticParams() {
-  const animeList = getAllAnime();
+  const animeList = await getAllAnime();
 
   return animeList.map((anime) => ({
     slug: anime.slug,
@@ -18,6 +19,7 @@ export default async function AnimeDetailsPage({ params }) {
 
   return (
     <div className="card">
+      <Header />
       <img src={anime.image} alt={anime.title} />
       <div className="card-content">
         <h1>{anime.title}</h1>
