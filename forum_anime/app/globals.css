@@ -70,8 +70,8 @@ body::before {
 
 /* Kontener strony */
 .container {
-  max-width: 800px;
-  width: 100%; /* Dodanie pełnej szerokości w ramach maksymalnej szerokości */
+  max-width: 1200px; /* Zwiększona maksymalna szerokość */
+  width: 85%; /* Zachowanie elastycznej szerokości */
   padding: 20px;
   margin: 150px auto 40px auto; /* Wyśrodkowanie kontenera */
   background: rgba(0, 0, 0, 0.9);
@@ -136,8 +136,8 @@ input[type="text"]::placeholder {
   }
 
   .container {
+    max-width: 95%; /* Zmniejszamy szerokość na mniejszych ekranach */
     padding: 15px;
     margin-top: 130px;
-    max-width: 95%;
   }
 }
