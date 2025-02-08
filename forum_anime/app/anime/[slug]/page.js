@@ -1,4 +1,5 @@
 import { getAnimeBySlug, getAllAnime } from '@/lib/anime';
+import Header from '@/components/Header';
 
 export async function generateStaticParams() {
   const animeList = await getAllAnime();
@@ -17,6 +18,7 @@ export default async function AnimeDetailsPage({ params }) {
 
   return (
     <div>
+      <Header />
       <h1>{anime.title}</h1>
       <img src={anime.image} alt={anime.title} />
       <p><strong>Description:</strong> {anime.description}</p>
