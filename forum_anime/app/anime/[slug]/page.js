@@ -1,7 +1,7 @@
 import { getAnimeBySlug, getAllAnime } from '@/lib/anime';
 
 export async function generateStaticParams() {
-  const animeList = getAllAnime();
+  const animeList = await getAllAnime();
 
   return animeList.map((anime) => ({
     slug: anime.slug,
