@@ -3,13 +3,29 @@ import { getAllAnime } from '@/lib/anime';
 import styles from './anime.module.css';
 import Header from '@/components/Header';
 import Image from 'next/image';
+import SearchBar from '@/components/SearchBar';
 
-export default function AnimePage() {
+
+
+export default async function AnimePage({ searchParams }) {
+  const searchQuery = await searchParams?.search || '';
   const animeList = getAllAnime();
+
+  const filteredAnime = searchQuery
+    ? animeList.filter((anime) =>
+        anime.title.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : animeList;
+
+
 
   return (
     <div>
       <Header />
+
+      <h1>Wyszukaj</h1>
+      <SearchBar />
+      <h1>Anime List</h1>
       <h1 className={styles.title}>Anime List</h1>
       <div className={styles.grid}>
         {animeList.map(anime => (
