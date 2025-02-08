@@ -10,7 +10,7 @@ export default function AnimePage() {
   return (
     <div>
       <Header />
-      <h1>Anime List</h1>
+      <h1 className={styles.title}>Anime List</h1>
       <div className={styles.grid}>
         {animeList.map(anime => (
           <div key={anime.id} className={styles.animeCard}>
