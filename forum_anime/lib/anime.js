@@ -13,3 +13,8 @@ export function getAnimeBySlug(slug) {
 export function getAnimeById(id) {
   return db.prepare('SELECT * FROM anime WHERE id = ?').get(id);
 }
+
+export function getAllPosts() {
+  const posts = db.prepare('SELECT * FROM posts ORDER BY created_at DESC').all();
+  return posts;
+}
