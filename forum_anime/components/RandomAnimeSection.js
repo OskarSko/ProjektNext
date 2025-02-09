@@ -1,9 +1,18 @@
-import styles from './Home.module.css'; 
+'use client'; // To sprawia, że komponent działa po stronie klienta
+
+import { useState, useEffect } from 'react';
+import styles from './Home.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function RandomAnimeSection({ animeList }) {
-  const randomAnime = [...animeList].sort(() => 0.5 - Math.random()).slice(0, 6);
+  const [randomAnime, setRandomAnime] = useState([]);
+
+  useEffect(() => {
+    // Losowanie 6 anime za każdym razem, gdy komponent jest montowany
+    const shuffledAnime = [...animeList].sort(() => 0.5 - Math.random()).slice(0, 6);
+    setRandomAnime(shuffledAnime);
+  }, [animeList]);
 
   return (
     <div className={styles.randomAnimeSection}>
@@ -18,7 +27,7 @@ export default function RandomAnimeSection({ animeList }) {
                 width={300} 
                 height={450} 
                 className={styles.animeImage} 
-                priority={true} 
+                priority={true}
               />
             </Link>
             <h3 className={styles.animeTitle}>{anime.title}</h3>
