@@ -13,12 +13,12 @@ export default function RandomAnimeSection({ animeList }) {
           <div key={anime.id} className={styles.animeCard}>
             <Link href={`/anime/${anime.slug}`}>
               <Image 
-                src={anime.image} 
+                src={anime.image.startsWith('/images') ? anime.image : `/images${anime.image}`} 
                 alt={anime.title} 
                 width={300} 
                 height={450} 
                 className={styles.animeImage} 
-                priority={true}  // Szybsze ładowanie
+                priority={true} 
               />
             </Link>
             <h3 className={styles.animeTitle}>{anime.title}</h3>
