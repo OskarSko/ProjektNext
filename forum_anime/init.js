@@ -3,17 +3,143 @@ const db = sql('anime_forum.db');
 
 const dummyPosts = [
   {
-    title: 'Best Shounen Anime of All Time',
-    content: 'Naruto, One Piece, Bleach, and more... What are your favorites and why?',
-    category: 'Shounen',
-    author: 'anime_fan_123',
+    title: 'Top Mecha Anime Recommendations',
+    content: 'Gundam, Code Geass, Evangelion... Which mecha anime has the best storyline and action?',
+    category: 'Mecha',
+    author: 'mecha_enthusiast',
     created_at: new Date().toISOString()
   },
   {
-    title: 'Most Heartbreaking Romance Scenes',
-    content: 'From "Your Lie in April" to "Clannad", let’s discuss the most emotional moments.',
+    title: 'Favorite Anime Villains',
+    content: 'From Madara Uchiha to Meruem, who is the most iconic anime villain and why?',
+    category: 'General',
+    author: 'dark_otaku',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Best Slice of Life Anime',
+    content: 'Barakamon, March Comes in Like a Lion, or maybe K-On!? Let’s hear your top picks.',
+    category: 'Slice of Life',
+    author: 'cozy_anime_fan',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Anime with the Best Fights',
+    content: 'Epic battles like Goku vs. Jiren, Luffy vs. Kaido, and more... What’s your favorite?',
+    category: 'Action',
+    author: 'battle_junkie',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Most Overpowered Anime Characters',
+    content: 'Saitama, Gojo Satoru, or maybe Ainz Ooal Gown? Let’s talk power scaling!',
+    category: 'General',
+    author: 'power_scaler_9000',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Top Psychological Thriller Anime',
+    content: 'Death Note, Monster, or The Promised Neverland? What left you on the edge of your seat?',
+    category: 'Thriller',
+    author: 'mind_twister',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Anime OSTs That Hit Different',
+    content: 'Soundtracks like "Attack on Titan", "Your Name", and "Cowboy Bebop"—share your top picks.',
+    category: 'Music',
+    author: 'music_otaku',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Underrated Anime Gems',
+    content: 'What anime do you think deserves more love? Share your hidden favorites.',
+    category: 'General',
+    author: 'hidden_gem_hunter',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'The Funniest Anime Series',
+    content: 'Gintama, Konosuba, or Nichijou? What made you laugh the most?',
+    category: 'Comedy',
+    author: 'funny_baka',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Anime with the Best Opening Songs',
+    content: 'Discuss openings that get you hyped, like "Unravel", "Guren no Yumiya", and more.',
+    category: 'Music',
+    author: 'op_fanatic',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Anime Movies That Made You Cry',
+    content: 'Silent Voice, Grave of the Fireflies, or Your Name? Which one broke you?',
+    category: 'Drama',
+    author: 'tearjerker_otaku',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Favorite Anime Rivalries',
+    content: 'Lelouch vs. Suzaku, Ash vs. Gary, or maybe Light vs. L? What’s the most iconic?',
+    category: 'General',
+    author: 'rivalry_watcher',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Fantasy Anime Recommendations',
+    content: 'Overlord, Re:Zero, or Sword Art Online—what’s your go-to fantasy world?',
+    category: 'Fantasy',
+    author: 'isekai_fan',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Top 10 Sports Anime',
+    content: 'Haikyuu!!, Kuroko no Basket, or Captain Tsubasa—what keeps you pumped?',
+    category: 'Sports',
+    author: 'sports_anime_guy',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Best Anime Studio in Your Opinion?',
+    content: 'Madhouse, Kyoto Animation, or MAPPA? Which studio consistently delivers?',
+    category: 'Industry',
+    author: 'studio_buff',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Anime with the Most Emotional Deaths',
+    content: 'We’ve all cried at some point—who hit you the hardest, Ace, Kamina, or Neji?',
+    category: 'Drama',
+    author: 'tragic_fan',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Best Isekai Anime Worlds',
+    content: 'Which fantasy world would you want to be reincarnated into? Share your top choices.',
+    category: 'Isekai',
+    author: 'fantasy_dreamer',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Your Favorite Anime Couple',
+    content: 'Naruto and Hinata, Inuyasha and Kagome, or Kirito and Asuna? Let’s discuss ship wars!',
     category: 'Romance',
-    author: 'romantic_otaku',
+    author: 'ship_warrior',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Anime Ending That Blew Your Mind',
+    content: 'From Attack on Titan to Steins;Gate, which anime ending left you speechless?',
+    category: 'General',
+    author: 'ending_expert',
+    created_at: new Date().toISOString()
+  },
+  {
+    title: 'Best Anime Weapons and Gear',
+    content: 'Zangetsu, Gunblade, or 3D Maneuver Gear? What’s your top pick for battle gear?',
+    category: 'Action',
+    author: 'gear_master',
     created_at: new Date().toISOString()
   }
 ];
