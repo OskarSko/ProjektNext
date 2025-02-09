@@ -18,6 +18,7 @@ export default function RandomAnimeSection({ animeList }) {
                 width={300} 
                 height={450} 
                 className={styles.animeImage} 
+                priority={true}  // Szybsze ładowanie
               />
             </Link>
             <h3 className={styles.animeTitle}>{anime.title}</h3>
