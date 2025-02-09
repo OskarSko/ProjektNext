@@ -80,3 +80,37 @@
     font-size: 18px;
     color: #d1d1d1;
 }
+
+.postsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .postItem {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+  }
+  
+  .postTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .postContent {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .postMeta {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  .noPostsMessage {
+    font-style: italic;
+    color: #888;
+  }
+  
