@@ -2,10 +2,8 @@ import styles from './Home.module.css';
 import sqlite3 from 'better-sqlite3';
 
 export default async function LatestPosts() {
-  // Połączenie z bazą danych
   const db = sqlite3('anime_forum.db');
   
-  // Pobranie 3 najnowszych postów
   const posts = db.prepare('SELECT * FROM posts ORDER BY created_at DESC LIMIT 3').all();
 
   return (
