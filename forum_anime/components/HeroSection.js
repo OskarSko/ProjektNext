@@ -1,5 +1,4 @@
 import styles from './Home.module.css'; 
-// Poprawiona ścieżka
 
 export default function HeroSection() {
   return (

@@ -1,4 +1,4 @@
-"use client"; // Deklaracja klientowego komponentu
+"use client";
 
 import { useState } from 'react';
 
@@ -15,9 +15,9 @@ export default function ContactForm() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Zapobiega przeładowaniu strony
+    e.preventDefault();
     alert('Wiadomość została wysłana!');
-    setFormData({ name: '', email: '', message: '' }); // Czyści pola formularza
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
