@@ -6,17 +6,17 @@
     border-radius: 12px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
     overflow: hidden;
-    width: 90%; /* Dynamiczna szerokość na mniejszych ekranach */
+    width: 90%;
     max-width: 800px;
-    height: auto; /* Automatyczna wysokość na mniejszych ekranach */
+    height: auto;
     padding: 20px;
     margin: 20px auto;
-    flex-wrap: wrap; /* Pozwala zawinąć elementy na mniejszych ekranach */
+    flex-wrap: wrap;
 }
 
 .card img {
     width: 100%;
-    max-width: 350px; /* Utrzymanie maksymalnego rozmiaru obrazka */
+    max-width: 350px;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
@@ -32,7 +32,7 @@
 }
 
 .card-content h1 {
-    font-size: 26px; /* Zmniejszenie czcionki na mniejszych ekranach */
+    font-size: 26px;
     color: #ffcc00;
     margin: 0 0 15px;
 }
@@ -47,15 +47,14 @@
     color: #ffcc00;
 }
 
-/* Media query dla tabletów i telefonów */
 @media (max-width: 768px) {
     .card {
-        flex-direction: column; /* Ułożenie pionowe na mniejszych ekranach */
+        flex-direction: column;
         padding: 15px;
     }
 
     .card img {
-        width: 100%; /* Pełna szerokość obrazka na małych ekranach */
+        width: 100%;
         max-width: 100%;
         height: auto;
     }

@@ -5,7 +5,7 @@
 :root {
   --background-color: #121212;
   --foreground: #ffffff;
-  --highlight-color: #8a2be2; /* Fioletowy akcent */
+  --highlight-color: #8a2be2;
 }
 
 body {
@@ -17,7 +17,6 @@ body {
   background: var(--background-color);
 }
 
-/* Tło obrazka */
 body::before {
   content: "";
   position: fixed;
@@ -31,7 +30,6 @@ body::before {
   z-index: -1;
 }
 
-/* Główna nawigacja */
 .header {
   display: flex;
   justify-content: space-between;
@@ -47,7 +45,6 @@ body::before {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Lista nawigacyjna */
 .nav ul {
   display: flex;
   list-style: none;
@@ -68,19 +65,18 @@ body::before {
   color: var(--highlight-color);
 }
 
-/* Kontener strony */
 .container {
-  max-width: 1200px; /* Zwiększona maksymalna szerokość */
-  width: 85%; /* Zachowanie elastycznej szerokości */
+  max-width: 1200px;
+  width: 85%;
   padding: 20px;
-  margin: 150px auto 40px auto; /* Wyśrodkowanie kontenera */
+  margin: 150px auto 40px auto;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
   border: 2px solid var(--highlight-color);
 }
 
-/* Wyszukiwarka */
+
 input[type="text"] {
   width: 100%;
   padding: 12px 15px;
@@ -96,7 +92,7 @@ input[type="text"]::placeholder {
   color: #888;
 }
 
-/* Lista anime */
+
 .anime-list {
   list-style: none;
   padding: 0;
@@ -128,7 +124,7 @@ input[type="text"]::placeholder {
   margin: 0.5rem 0;
 }
 
-/* Responsywność dla mniejszych ekranów */
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -136,7 +132,7 @@ input[type="text"]::placeholder {
   }
 
   .container {
-    max-width: 95%; /* Zmniejszamy szerokość na mniejszych ekranach */
+    max-width: 95%;
     padding: 15px;
     margin-top: 130px;
   }

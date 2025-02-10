@@ -1,4 +1,4 @@
-/* Sekcja powitalna */
+
 .heroSection {
     text-align: center;
     background-color: #1e1e1e;
@@ -20,7 +20,7 @@
     color: #d1d1d1;
 }
 
-/* Losowe anime */
+
 .randomAnimeSection {
     margin-bottom: 50px;
     text-align: center;
@@ -68,7 +68,7 @@
     font-weight: bold;
 }
 
-/* Placeholder najnowsze posty */
+
 .latestPosts {
     background-color: #2a2a2a;
     padding: 20px;
